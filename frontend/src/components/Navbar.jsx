@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-const [isScrolled,setIsScrolled]=useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
 
- useEffect(() => {
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 10);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="bg-red-500 w-full h-[77px] flex items-center ">
+    <div className=" w-full h-[77px] flex items-center fixed text-white ">
       <nav className="flex items-center justify-between px-4 sm:px-6 md:px-12 lg:px-16 w-full">
         <div>
           <img src={assets.logo} alt="" />
@@ -44,10 +43,13 @@ const [isScrolled,setIsScrolled]=useState(false)
         </div>
       </nav>
       {isMenuOpen && (
-        <div
-          className='md:hidden bg-red-400 fixed top-0 left-0 w-full h-full '>
-        
-          <img src={assets.closeMenu} className="fixed right-0 p-4" alt="" onClick={()=>setIsMenuOpen(!isMenuOpen)} />
+        <div className="md:hidden bg-red-400 fixed top-0 left-0 w-full h-full ">
+          <img
+            src={assets.closeMenu}
+            className="fixed right-0 p-4"
+            alt=""
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
 
           <div className="px-10 py-20">
             <ul className="flex flex-col gap-7 text-white text-base w-full items-center ">
