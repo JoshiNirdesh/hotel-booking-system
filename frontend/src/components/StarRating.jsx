@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const StarRating = ({ rating }) => {
   return (
-    <div>
+    <div className="flex mt-5">
       {Array(5)
         .fill("")
         .map((_, index) => (
@@ -12,7 +12,7 @@ const StarRating = ({ rating }) => {
               rating > index ? assets.starIconFilled : assets.starIconOutlined
             }
             alt=""
-            className="w-4.5 h-4.5"
+            className="w-4.5 h-4.5 "
           />
         ))}
     </div>
