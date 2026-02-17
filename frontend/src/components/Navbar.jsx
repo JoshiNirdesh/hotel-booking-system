@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className=" w-full h-[77px] flex items-center fixed text-white  z-10">
       <nav
-        className={`flex items-center justify-between px-8 sm:px-10 md:px-16 lg:px-20 w-full bg-white text-black h-[77px]`}
+        className={`flex items-center justify-between px-8 sm:px-10 md:px-16 lg:px-20 w-full bg-white text-black h-[77px] border border-gray-300 shadow-lg`}
       >
         <div>
-          <img src={assets.logoblack} alt="" className="text-black" />
+          <img
+            src={assets.logoblack}
+            alt=""
+            className="text-black cursor-pointer"
+            onClick={() => navigate("/")}
+          />
         </div>
         <ul className="hidden md:flex items-center gap-10 sm:h-9 md:h-10 ">
           <Link to="/">Home</Link>
