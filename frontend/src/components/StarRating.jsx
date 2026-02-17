@@ -2,6 +2,7 @@ import React from "react";
 import { assets } from "../assets/assets";
 
 const StarRating = ({ rating = 5 }) => {
+
   return (
     <div className="flex items-center">
       {Array(5)

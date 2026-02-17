@@ -1,8 +1,9 @@
-import React from "react";
 import { assets, roomsDummyData } from "../assets/assets";
 import StarRating from "../components/StarRating";
-
+import { useNavigate } from "react-router-dom";
 const AllRoom = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="px-8 sm:px-10 md:px-16 lg:px-20">
       <div className="flex flex-col text-left">
@@ -18,12 +19,27 @@ const AllRoom = () => {
           {roomsDummyData.map((room, index) => (
             <div key={index}>
               <div className="mt-7 flex gap-7">
-                <img src={room.images[0]} alt="" className="w-80 rounded-lg" />
+                <img
+                  src={room.images[0]}
+                  alt=""
+                  className="w-80 rounded-lg"
+                  onClick={() => {
+                    navigate(`room/${room._id}`);
+                    scrollTo(0, 0);
+                  }}
+                />
 
                 <div className="flex flex-col justify-center">
                   <p className="font-light text-gray-500">{room.hotel.city}</p>
 
-                  <h2 className="font-playfair text-2xl font-light">
+                  <h2
+                    className="font-playfair text-2xl font-light"
+                    onClick={() => {
+                      navigate(`room/${room._id}`);
+                      scrollTo(0, 0);
+                    }}
+                    ß
+                  >
                     {room.hotel.name}
                   </h2>
 
