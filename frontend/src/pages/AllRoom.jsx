@@ -24,7 +24,7 @@ const AllRoom = () => {
                   alt=""
                   className="w-80 rounded-lg"
                   onClick={() => {
-                    navigate(`room/${room._id}`);
+                    navigate(`/room/${room._id}`);
                     scrollTo(0, 0);
                   }}
                 />
@@ -35,10 +35,10 @@ const AllRoom = () => {
                   <h2
                     className="font-playfair text-2xl font-light"
                     onClick={() => {
-                      navigate(`room/${room._id}`);
+                      navigate(`/room/${room._id}`);
                       scrollTo(0, 0);
                     }}
-                    ß
+                    
                   >
                     {room.hotel.name}
                   </h2>

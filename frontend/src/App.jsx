@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import HotelCard from "./components/HotelCard";
 import AllRoom from "./pages/AllRoom";
 import Footer from "./components/Footer";
+import RoomDetail from "./pages/RoomDetail";
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -14,9 +15,10 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/room" element={<AllRoom/>}/>
+        <Route path="/room" element={<AllRoom />} />
+        <Route path="/room/:id" element={<RoomDetail />}></Route>
       </Routes>
-      {!isOwnerPath && <Footer/>}
+      {!isOwnerPath && <Footer />}
     </>
   );
 };

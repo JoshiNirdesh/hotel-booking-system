@@ -5,17 +5,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className=" w-full h-[77px] flex items-center fixed text-white ">
+    <div className=" w-full h-[77px] flex items-center fixed text-white  z-10">
       <nav
         className={`flex items-center justify-between px-8 sm:px-10 md:px-16 lg:px-20 w-full bg-white text-black h-[77px]`}
       >
