@@ -22,13 +22,11 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center gap-10 sm:h-9 md:h-10 ">
           <Link to="/">Home</Link>
           <Link to="/room">Hotels</Link>
-          <Link>Experiences</Link>
-          <Link>About</Link>
+          <Link to="/experience">Experiences</Link>
+          <Link to="/about">About</Link>
         </ul>
         <div className="hidden md:flex items-center gap-8 ">
-          <img src={assets.searchIcon} alt="" />
-          <img src={assets.userIcon} alt="" />
-          <button className="bg-black px-7 text-sm py-2 rounded-full text-white">
+          <button className="bg-black px-7 text-sm py-2 rounded-full text-white" onClick={()=>navigate("/login")}>
             Login
           </button>
         </div>
