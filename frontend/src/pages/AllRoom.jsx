@@ -22,7 +22,7 @@ const AllRoom = () => {
                 <img
                   src={room.images[0]}
                   alt=""
-                  className="md:h-80 w-100 rounded-lg cursor-pointer"
+                  className="md:h-80 w-120 rounded-lg cursor-pointer"
                   onClick={() => {
                     navigate(`/room/${room._id}`);
                     scrollTo(0, 0);
